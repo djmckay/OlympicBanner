@@ -18,16 +18,32 @@ import UIKit
  */
 
 
-class ModelController: NSObject, UIPageViewControllerDataSource {
+class ModelController: NSObject {
 
-    var pageData: [String] = []
+    var pageData: [[String]] = []
 
 
     override init() {
         super.init()
         // Create the data model.
         let dateFormatter = DateFormatter()
-        pageData = dateFormatter.monthSymbols
+        
+        var count = 0
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
+        let size = dataViewController.view.bounds.size
+        var itemsPerPage = 2
+        itemsPerPage = Int(size.width / EventCollectionViewCell.defaultSize.width)
+        for index in 1...dateFormatter.monthSymbols.count / itemsPerPage {
+            pageData.append([])
+        }
+        
+        for (index, item) in dateFormatter.monthSymbols.enumerated() {
+            pageData[count].append(item)
+            if index % itemsPerPage == itemsPerPage - 1 {
+                count += 1
+            }
+        }
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
@@ -45,7 +61,14 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     func indexOfViewController(_ viewController: DataViewController) -> Int {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        return pageData.index(of: viewController.dataObject) ?? NSNotFound
+        for (index, item) in pageData.enumerated() {
+            for pageString in item {
+                if viewController.dataObject.contains(pageString) {
+                    return index
+                }
+            }
+        }
+        return NSNotFound
     }
 
     // MARK: - Page View Controller Data Source
@@ -71,6 +94,18 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+    }
+
+}
+
+extension ModelController: UIPageViewControllerDataSource {
+    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return self.pageData.count
+    }
+    
+    
+    public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 
 }

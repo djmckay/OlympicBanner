@@ -14,6 +14,10 @@
 		2203D5442035DCA800D994AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2203D5422035DCA800D994AB /* Main.storyboard */; };
 		2203D5462035DCA800D994AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2203D5452035DCA800D994AB /* Assets.xcassets */; };
 		2203D5492035DCA800D994AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2203D5472035DCA800D994AB /* LaunchScreen.storyboard */; };
+		2203D5512035DEE700D994AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D5502035DEE700D994AB /* MainViewController.swift */; };
+		2203D5532035E0B500D994AB /* SnowflakeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D5522035E0B500D994AB /* SnowflakeController.swift */; };
+		2203D5562035E58000D994AB /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D5542035E58000D994AB /* EventCollectionViewCell.swift */; };
+		2203D5572035E58000D994AB /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2203D5552035E58000D994AB /* EventCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		2203D5452035DCA800D994AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2203D5482035DCA800D994AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2203D54A2035DCA800D994AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2203D5502035DEE700D994AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2203D5522035E0B500D994AB /* SnowflakeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowflakeController.swift; sourceTree = "<group>"; };
+		2203D5542035E58000D994AB /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		2203D5552035E58000D994AB /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				2203D53E2035DCA800D994AB /* DataViewController.swift */,
 				2203D5402035DCA800D994AB /* ModelController.swift */,
 				2203D5422035DCA800D994AB /* Main.storyboard */,
+				2203D5522035E0B500D994AB /* SnowflakeController.swift */,
+				2203D5542035E58000D994AB /* EventCollectionViewCell.swift */,
+				2203D5552035E58000D994AB /* EventCollectionViewCell.xib */,
+				2203D5502035DEE700D994AB /* MainViewController.swift */,
 				2203D5452035DCA800D994AB /* Assets.xcassets */,
 				2203D5472035DCA800D994AB /* LaunchScreen.storyboard */,
 				2203D54A2035DCA800D994AB /* Info.plist */,
@@ -130,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2203D5492035DCA800D994AB /* LaunchScreen.storyboard in Resources */,
+				2203D5572035E58000D994AB /* EventCollectionViewCell.xib in Resources */,
 				2203D5462035DCA800D994AB /* Assets.xcassets in Resources */,
 				2203D5442035DCA800D994AB /* Main.storyboard in Resources */,
 			);
@@ -143,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2203D53D2035DCA800D994AB /* RootViewController.swift in Sources */,
+				2203D5562035E58000D994AB /* EventCollectionViewCell.swift in Sources */,
 				2203D5412035DCA800D994AB /* ModelController.swift in Sources */,
+				2203D5532035E0B500D994AB /* SnowflakeController.swift in Sources */,
 				2203D53F2035DCA800D994AB /* DataViewController.swift in Sources */,
 				2203D53B2035DCA800D994AB /* AppDelegate.swift in Sources */,
+				2203D5512035DEE700D994AB /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
