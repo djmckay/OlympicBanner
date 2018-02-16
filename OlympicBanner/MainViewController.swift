@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         var snowManager = SnowflakeController()
         snowManager.addToView(into: self.eventBannerViewController)
+        
     }
 
     override func didReceiveMemoryWarning() {

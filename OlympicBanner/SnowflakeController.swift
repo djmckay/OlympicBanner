@@ -9,9 +9,7 @@
 import UIKit
 
 struct SnowflakeController {
-    
-    var gravitiy: UIGravityBehavior!
-    
+        
     let snowLayer = CAEmitterLayer()
     lazy var snowCell: CAEmitterCell = {
         let cell = CAEmitterCell()
@@ -32,10 +30,29 @@ struct SnowflakeController {
         return cell
     }()
     
+    lazy var snowCell2: CAEmitterCell = {
+        let cell = CAEmitterCell()
+        cell.contents = #imageLiteral(resourceName: "snowflake").cgImage
+        cell.birthRate = 50
+        cell.velocity = -40.0
+        cell.velocityRange = 20.0
+        cell.lifetime = 30.0
+        cell.color = UIColor.white.withAlphaComponent(0.75).cgColor
+        cell.alphaRange = 0.5
+        cell.scale = 0.05
+        cell.scaleRange = 0.09
+        cell.emissionRange = .pi
+        cell.yAcceleration = 10
+        cell.xAcceleration = 10
+        cell.spin = -0.5
+        cell.spinRange = 2
+        return cell
+    }()
+    
     mutating func addToView(into view: UIView) {
         snowLayer.emitterPosition = CGPoint(x: view.frame.size.width / 2.0, y: -view.frame.size.height)
         snowLayer.emitterMode = kCAEmitterLayerSurface
-        snowLayer.emitterCells = [snowCell]
+        snowLayer.emitterCells = [snowCell, snowCell2]
         view.layer.addSublayer(snowLayer)
     }
 }
