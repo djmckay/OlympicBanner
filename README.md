@@ -4,3 +4,8 @@ Add container to a UIViewController that uses a child UIViewController as a page
 The banner also has a simple animation to simulate snowflakes falling.
 
 <img width="300" alt="screen shot" src="https://github.com/djmckay/OlympicBanner/blob/master/Screen%20Shot%202018-02-15%20at%208.39.05%20PM.png?raw=true">
+
+Part 1 Demo:
+https://youtu.be/Yp6pFrOqrHE
+Part 2 Demo:
+
